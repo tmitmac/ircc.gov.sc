@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Injury Rehabilitation and Compensation Corporation</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1d1d1f;
+      background: #f5f7f8;
+    }
+
+    /* Top utility bar */
+    .utility-bar {
+      background: #123f63;
+      color: white;
+      font-size: 14px;
+    }
+
+    .utility-container {
+      max-width: 1250px;
+      margin: auto;
+      padding: 10px 25px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 22px;
+    }
+
+    .utility-container a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Main navigation */
+    header {
+      background: white;
+      border-bottom: 1px solid #d9dfe3;
+    }
+
+    .nav-container {
+      max-width: 1250px;
+      margin: auto;
+      padding: 20px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-decoration: none;
+      color: #123f63;
+    }
+
+    .brand-mark {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #007d8a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 27px;
+      font-weight: bold;
+    }
+
+    .brand-text {
+      line-height: 1.15;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 20px;
+      letter-spacing: -.3px;
+    }
+
+    .brand-text span {
+      font-size: 13px;
+      color: #4d5d67;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      color: #25343d;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #007d8a;
+    }
+
+    .menu-button {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #e7f3f4 0%, #f7fbfb 55%, #e2ecef 100%);
+      border-bottom: 1px solid #d8e2e5;
+    }
+
+    .hero-container {
+      max-width: 1250px;
+      margin: auto;
+      padding: 75px 25px 85px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 20px;
+      color: #123f63;
+      font-size: 52px;
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      line-height: 1.6;
+      color: #4a5962;
+      max-width: 700px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    .button-primary {
+      background: #007d8a;
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #006772;
+    }
+
+    .button-secondary {
+      border: 2px solid #123f63;
+      color: #123f63;
+    }
+
+    .button-secondary:hover {
+      background: #123f63;
+      color: white;
+    }
+
+    .hero-card {
+      background: white;
+      border-radius: 10px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      border-top: 6px solid #007d8a;
+    }
+
+    .hero-card h2 {
+      margin-top: 0;
+      color: #123f63;
+      font-size: 25px;
+    }
+
+    .hero-card p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .quick-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quick-links a {
+      background: #f1f6f7;
+      color: #123f63;
+      padding: 14px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .quick-links a:hover {
+      background: #dcebed;
+    }
+
+    /* Main services */
+    .services {
+      max-width: 1250px;
+      margin: auto;
+      padding: 70px 25px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 12px;
+      color: #123f63;
+      font-size: 34px;
+    }
+
+    .section-heading p {
+      margin: 0 auto;
+      color: #5c6870;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid #dfe5e8;
+      padding: 30px;
+      border-radius: 8px;
+      transition: .2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.07);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #e2f1f2;
+      color: #007d8a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      color: #123f63;
+      font-size: 21px;
+      margin: 0 0 12px;
+    }
+
+    .service-card p {
+      color: #5c6870;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .service-card a {
+      color: #007d8a;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* Notice section */
+    .notice {
+      background: #123f63;
+      color: white;
+    }
+
+    .notice-container {
+      max-width: 1250px;
+      margin: auto;
+      padding: 45px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .notice h2 {
+      margin: 0 0 10px;
+      font-size: 28px;
+    }
+
+    .notice p {
+      margin: 0;
+      color: #dce9ef;
+      line-height: 1.5;
+    }
+
+    .notice .button {
+      background: white;
+      color: #123f63;
+      white-space: nowrap;
+    }
+
+    /* News */
+    .news {
+      max-width: 1250px;
+      margin: auto;
+      padding: 70px 25px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .news-card {
+      background: white;
+      border: 1px solid #dfe5e8;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .news-image {
+      height: 150px;
+      background: linear-gradient(135deg, #b7d5d9, #e4eff0);
+    }
+
+    .news-content {
+      padding: 24px;
+    }
+
+    .news-date {
+      color: #6c7880;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .news-card h3 {
+      color: #123f63;
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    .news-card p {
+      color: #5c6870;
+      line-height: 1.5;
+    }
+
+    .news-card a {
+      color: #007d8a;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      background: #18272f;
+      color: white;
+    }
+
+    .footer-container {
+      max-width: 1250px;
+      margin: auto;
+      padding: 55px 25px 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+
+    .footer-brand h3 {
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    .footer-brand p {
+      color: #b9c4c9;
+      line-height: 1.6;
+      max-width: 380px;
+    }
+
+    .footer-column h4 {
+      margin-top: 0;
+      font-size: 16px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: #b9c4c9;
+      text-decoration: none;
+      margin: 12px 0;
+    }
+
+    .footer-column a:hover {
+      color: white;
+    }
+
+    .copyright {
+      border-top: 1px solid #3b4a52;
+      padding-top: 25px;
+      color: #aeb9bd;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid,
+      .news-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .menu-button {
+        display: block;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .utility-container {
+        justify-content: center;
+        gap: 14px;
+        font-size: 12px;
+      }
+
+      .brand-text strong {
+        font-size: 16px;
+      }
+
+      .brand-text span {
+        font-size: 11px;
+      }
+
+      .hero-container {
+        padding: 50px 20px 60px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .service-grid,
+      .news-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .notice-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .button {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="utility-bar">
+    <div class="utility-container">
+      <a href="#">Contact us</a>
+      <a href="#">Accessibility</a>
+      <a href="#">Sign in</a>
+    </div>
+  </div>
+
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <div class="brand-mark">IR</div>
+        <div class="brand-text">
+          <strong>Injury Rehabilitation & Compensation Corporation</strong>
+          <span>Supporting recovery. Providing protection.</span>
+        </div>
+      </a>
+
+      <nav>
+        <a href="#">About us</a>
+        <a href="#">For individuals</a>
+        <a href="#">For employers</a>
+        <a href="#">Rehabilitation</a>
+        <a href="#">News</a>
+      </nav>
+
+      <button class="menu-button">☰</button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-container">
+        <div>
+          <h1>Helping you recover and move forward.</h1>
+
+          <p>
+            The Injury Rehabilitation and Compensation Corporation provides
+            support, rehabilitation, and compensation to people affected by
+            personal injury.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#" class="button button-primary">Make a claim</a>
+            <a href="#" class="button button-secondary">Find out what you're covered for</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h2>How can we help you?</h2>
+          <p>Quick access to our most commonly used services.</p>
+
+          <div class="quick-links">
+            <a href="#">Make a new injury claim</a>
+            <a href="#">Check an existing claim</a>
+            <a href="#">Find rehabilitation support</a>
+            <a href="#">Request compensation information</a>
+            <a href="#">Contact our team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="section-heading">
+        <h2>Our services</h2>
+        <p>
+          We provide practical support to help people recover from injury and
+          return to their everyday lives.
+        </p>
+      </div>
+
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="service-icon">✚</div>
+          <h3>Injury claims</h3>
+          <p>
+            Find out how to make a claim and what information you may need to
+            provide.
+          </p>
+          <a href="#">Make a claim →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">♥</div>
+          <h3>Rehabilitation support</h3>
+          <p>
+            Access services and support designed to assist your physical and
+            personal recovery.
+          </p>
+          <a href="#">Explore rehabilitation →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">$</div>
+          <h3>Compensation</h3>
+          <p>
+            Learn about financial assistance and compensation that may be
+            available to you.
+          </p>
+          <a href="#">Learn about compensation →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">▣</div>
+          <h3>Support for employers</h3>
+          <p>
+            Information for employers about workplace injuries and supporting
+            employees.
+          </p>
+          <a href="#">For employers →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">?</div>
+          <h3>Your rights and responsibilities</h3>
+          <p>
+            Understand your responsibilities and the standards of service you
+            can expect from us.
+          </p>
+          <a href="#">Find out more →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">☎</div>
+          <h3>Contact us</h3>
+          <p>
+            Get in touch with our team for assistance with claims, payments,
+            rehabilitation, and other services.
+          </p>
+          <a href="#">Contact the Corporation →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="notice">
+      <div class="notice-container">
+        <div>
+          <h2>Already have a claim?</h2>
+          <p>
+            Sign in to view your claim information, update your details, and
+            access available services.
+          </p>
+        </div>
+
+        <a href="#" class="button">Sign in to MyIRCC</a>
+      </div>
+    </section>
+
+    <section class="news">
+      <div class="section-heading">
+        <h2>Latest news and updates</h2>
+        <p>Information from the Injury Rehabilitation and Compensation Corporation.</p>
+      </div>
+
+      <div class="news-grid">
+
+        <article class="news-card">
+          <div class="news-image"></div>
+          <div class="news-content">
+            <div class="news-date">27 AUGUST 2026</div>
+            <h3>Improving access to rehabilitation services</h3>
+            <p>
+              New initiatives are being introduced to help injured people access
+              rehabilitation services more quickly.
+            </p>
+            <a href="#">Read more →</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-image"></div>
+          <div class="news-content">
+            <div class="news-date">15 AUGUST 2026</div>
+            <h3>Changes to online claim services</h3>
+            <p>
+              Our online services have been updated to make it easier to manage
+              claims and personal information.
+            </p>
+            <a href="#">Read more →</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-image"></div>
+          <div class="news-content">
+            <div class="news-date">1 AUGUST 2026</div>
+            <h3>Annual report now available</h3>
+            <p>
+              Read about the Corporation's performance, services, and priorities
+              over the past year.
+            </p>
+            <a href="#">Read more →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <h3>Injury Rehabilitation & Compensation Corporation</h3>
+          <p>
+            We support people affected by personal injury through compensation,
+            rehabilitation, and practical assistance.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Services</h4>
+          <a href="#">Make a claim</a>
+          <a href="#">Rehabilitation</a>
+          <a href="#">Compensation</a>
+          <a href="#">Employers</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>About us</h4>
+          <a href="#">Our role</a>
+          <a href="#">Our leadership</a>
+          <a href="#">Annual reports</a>
+          <a href="#">Careers</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Help</h4>
+          <a href="#">Contact us</a>
+          <a href="#">Complaints</a>
+          <a href="#">Privacy</a>
+          <a href="#">Accessibility</a>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © 2026 Injury Rehabilitation and Compensation Corporation. All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
