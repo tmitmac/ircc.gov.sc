@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Injury Rehabilitation and Compensation Corporation</title>
+  <link rel="icon" type="image/x-icon" href="images/logo.png">
 
   <style>
     * {
@@ -71,7 +72,7 @@
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 27px;
+      font-size: 17px;
       font-weight: bold;
     }
 
@@ -117,11 +118,17 @@
 
     /* Hero */
     .hero {
-      background: linear-gradient(135deg, #e7f3f4 0%, #f7fbfb 55%, #e2ecef 100%);
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(197, 203, 205, 0.72) 100%),
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=2000&q=85') center/cover no-repeat;
       border-bottom: 1px solid #d8e2e5;
     }
 
     .hero-container {
+      position: relative;
+      z-index: 1;
       max-width: 1250px;
       margin: auto;
       padding: 75px 25px 85px;
@@ -516,7 +523,7 @@
   <header>
     <div class="nav-container">
       <a href="#" class="brand">
-        <div class="brand-mark">IR</div>
+        <div class="brand-mark">IRCC</div>
         <div class="brand-text">
           <strong>Injury Rehabilitation & Compensation Corporation</strong>
           <span>Supporting recovery. Providing protection.</span>
@@ -669,10 +676,9 @@
           <div class="news-image"></div>
           <div class="news-content">
             <div class="news-date">27 AUGUST 2026</div>
-            <h3>Improving access to rehabilitation services</h3>
+            <h3>Changes to cover eligibility</h3>
             <p>
-              New initiatives are being introduced to help injured people access
-              rehabilitation services more quickly.
+              The Government has announced new changes to the eligibility criteria for injury cover.
             </p>
             <a href="#">Read more →</a>
           </div>
